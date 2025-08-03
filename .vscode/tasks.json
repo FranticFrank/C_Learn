@@ -1,0 +1,39 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成活动文件",
+            "command": "C:\\Program Files\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                //"${file}",
+                "*.c",//当前文件夹中所有的.c文件都编译
+                "-o",
+                //"${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\a.exe"//a.exe是生成的可执行程序的名称
+
+
+                /*${file}:当前打开的正在编辑的文件名，包括绝对路径，文件名，文件后缀名*/
+                /*${fileBasename}:当前打开的文件名+后缀名,不包括路径;${fileBasenameNoExtension}:当前打开的文件的文件名,不包括路径和后缀名*/
+                /*${fileDirname} 当前打开的文件所在的绝对路径，不包括文件名*/
+                
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        }
+    ],
+    "version": "2.0.0"
+}
+/* 这个JSON配置文件定义了一个用于构建C/C++代码的任务，它的作用是将C/C++源代码编译成可执行文件。具体来说，这个任务使用了`gcc`编译器，并指定了一些编译选项和参数，例如生成调试信息、颜色输出等。该任务会在当前文件夹中查找所有的`.c`文件，并将它们编译成可执行文件，并命名为 `a.exe`。
+
+此外，任务的标签和详细描述提供了对任务的描述，方便用户理解任务的用途。整个配置文件可以被集成到一些集成开发环境（IDE）或者构建工具中，以便用户可以方便地使用该任务来编译他们的C/C++代码。 */

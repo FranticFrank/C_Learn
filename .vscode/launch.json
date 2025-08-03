@@ -1,0 +1,48 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) 启动",
+            "type": "cppdbg",
+            "request": "launch",
+            //"program": "输入程序名称，例如 ${workspaceFolder}/a.exe",
+            "program": "${fileDirname}\\a.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            //"miDebuggerPath": "/path/to/gdb",
+            "miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+
+        }
+
+    ]
+}
+/* 这个文件是用于配置 Visual Studio Code 的调试器，使其能够在的 C/C++ 项目中启动和调试程序。具体来说，这个配置文件中的配置项包括了：
+
+- 定义了一个调试配置，这个配置名为 "(gdb) 启动"。
+- 指定了调试器的类型为 "cppdbg"，即 C/C++ 调试器。
+- 设置了调试请求为 "launch"，表示启动调试。
+- 指定了待调试程序的路径，这里使用了 `${fileDirname}\\a.exe`，表示使用当前打开文件的目录下的 `a.exe` 作为待调试程序。
+- 指定了调试时的工作目录为 `${fileDirname}`，即当前打开文件所在的目录。
+- 指定了使用的调试器为 GDB，设置了 GDB 的路径为 "C:\\Program Files\\mingw64\\bin\\gdb.exe"。
+- 预先设置了两个 GDB 命令，一个是启用漂亮打印，另一个是将反汇编风格设置为 Intel 格式。
+
+这个配置文件的作用是为了方便在 Visual Studio Code 中进行 C/C++ 程序的调试，配置了启动调试器所需的各种参数和选项，以便可以在开发过程中方便地进行代码调试和排错。 */
